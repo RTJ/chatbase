@@ -9,7 +9,7 @@ Gemfile RubyGems:
 gem "chatbase"
 ```
 
-Gemfile github:
+Gemfile Github:
 ```ruby
 gem "booking-ruby", :git => 'https://github.com/RTJ/chatbase.git'
 ```
