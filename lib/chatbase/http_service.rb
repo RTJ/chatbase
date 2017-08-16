@@ -1,9 +1,10 @@
 module Chatbase
   class HttpService
-    attr_accessor :agent_key
+    attr_accessor :agent_key, :agent_name
 
     def initialize(agent_key: nil)
       @agent_key = agent_key || Chatbase.agent_key
+      @agent_name = agent_name || Chatbase.agent_name
     end
 
     def connection
@@ -18,7 +19,7 @@ module Chatbase
     def request_post(data)
       connection.post do |req|
         req.headers['Content-Type'] = 'application/json'
-        req.body = {'api_key': agent_key}.merge(data).to_json
+        req.body = {'api_key': agent_key, 'agent_name': agent_name}.merge(data).to_json
       end
     end
 
