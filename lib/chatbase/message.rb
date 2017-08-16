@@ -1,6 +1,9 @@
 module Chatbase
 	class Message
-   	def initialize
+    attr_accessor :agent_key
+
+    def initialize(agent_key: nil)
+      @agent_key = agent_key || Chatbase.agent_key
       @http_service = HttpService.new
     end
 
@@ -9,7 +12,12 @@ module Chatbase
     end
 
     def send_message(request_parameters)
-      http_service.request_post(request_parameters)
+      http_service.request_post("/api/message", {'api_key': @agent_key}.merge(request_parameters))
     end
+
+    def send_fbmessage(request_parameters)
+      http_service.request_post("/api/facebook/message_received?api_key=#{@agent_key}", request_parameters)
+    end
+
 	end
 end

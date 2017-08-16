@@ -21,28 +21,26 @@ bundle install chatbase
 
 # Setup
 
-Initialize the the gem by setting your Agent Key (agent_key) and Agent Name (agent_name).
+Initialize the the gem by setting your Agent Key (agent_key).
 
 eg: config/initializers/chatbase.rb
 
 ```
   Chatbase.agent_key = 'your-agent-api-key'
-  Chatbase.agent_name = 'your-agent-name'
 ```
 
 ## Usage
 
-# Supported endpoints
 
-## Development
-
+### Generic Message API
 ```ruby
 req_params = {
-    type: "user",
-    platform: "our-curl-test-platform",
-    message: "Hello Chatbase!",
+    platform: "ruby-test",
+    message: "Hello Chatbase from agent!",
     version: "1.0",
-    user_id: "user-00"
+    type: "agent",
+    user_id: "agent-01",
+    time_stamp: DateTime.now.strftime('%Q'),
 }
 
 response = Chatbase::Message.new.send_message(req_params)
@@ -50,6 +48,31 @@ response = Chatbase::Message.new.send_message(req_params)
 => response.body
 
 {"message_id": "1048441442", "status": 200}
+```
+
+### Facebook Message API
+```ruby
+    fb_params = {
+        sender: {id: '1520833104112'},
+        recipient: {id: '528195999812'},
+        timestamp: DateTime.now.strftime('%Q'),
+        message: {
+            mid: "mid.1457764197618:41d102a3e1ae206a381",
+            text: "hey test chatbot!"
+        },
+        chatbase_fields: {
+            intent: "say-hi-intent",
+            version: "1.01",
+            not_handled: false,
+            feedback: false
+        }
+    }
+
+response = Chatbase::Message.new.send_fbmessage(fb_params)
+
+=> response.body
+
+{"message_id"=>"1052280268", "status"=>200}
 ```
 
 ## Contributing
