@@ -21,7 +21,7 @@ bundle install chatbase
 
 # Setup
 
-Initialize the the gem by setting your username and password.
+Initialize the the gem by setting your Agent Key (agent_key) and Agent Name (agent_name).
 
 eg: config/initializers/chatbase.rb
 
