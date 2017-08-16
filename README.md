@@ -81,7 +81,7 @@ response = Chatbase::Message.new.send_messages(chat_params) # messages not messa
 {"all_succeeded"=>true, "responses"=>[{"message_id"=>1048692001, "status"=>"success"}, {"message_id"=>1048692002, "status"=>"success"}], "status"=>200} 
 ```
 
-### Facebook Message API
+### Send facebook Message API
 ```ruby
     fb_params = {
         sender: {id: '1520833104112'},
@@ -104,6 +104,34 @@ response = Chatbase::Message.new.send_fbmessage(fb_params)
 => response.body
 
 {"message_id"=>"1052280268", "status"=>200}
+```
+
+### Other available options:
+```ruby
+# Send generic Chatbase message
+Chatbase::Message.new.send_message(params)
+
+# Send multiple generic messages at once
+Chatbase::Message.new.send_messages(params)
+
+# Update Chatbase specific fields per message
+Chatbase::Message.new.update_message(params)
+
+# Send Chatbase the agent messages and Facebook JSON responses
+Chatbase::Message.new.send_fbmessage(params)
+
+# Sending multiple Facebook messages at once
+Chatbase::Message.new.send_fbmessages(params)
+
+# Send Chatbase messages received from Facebook
+Chatbase::Message.new.send_received_fbmessage(params)
+
+# Sending multiple Facebook received messages at once
+Chatbase::Message.new.send_received_fbmessages(params)
+
+# Update Chatbase Facebook specific fields per message
+Chatbase::Message.new.update_fbmessage(params)
+
 ```
 
 ## Contributing
