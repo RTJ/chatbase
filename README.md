@@ -1,6 +1,6 @@
 # Chatbase
 
-Chatbase.com analytics API written in ruby.
+Chatbase.com analytics API client written in ruby.
 
 ## Installation
 
