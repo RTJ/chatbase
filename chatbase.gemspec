@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Chatbase.com analytics API.}
   spec.description   = %q{Chatbase.com analytics client API written in ruby.}
-  spec.homepage      = "https://github.com/RTJ/chatbase."
+  spec.homepage      = "https://github.com/RTJ/chatbase"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
