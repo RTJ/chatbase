@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["eugeniu.rtj@gmail.com"]
 
   spec.summary       = %q{Chatbase.com analytics API.}
-  spec.description   = %q{Chatbase.com analytics client API written in ruby.}
+  spec.description   = %q{Chatbase.com analytics API client written in ruby.}
   spec.homepage      = "https://github.com/RTJ/chatbase"
   spec.license       = "MIT"
 
