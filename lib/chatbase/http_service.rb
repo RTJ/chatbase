@@ -9,7 +9,7 @@ module Chatbase
 
     def connection
       @connection ||= begin
-        Faraday.new(:url => 'https://chatbase-area120.appspot.com/api/message') do |faraday|
+        Faraday.new(:url => 'https://chatbase.com/api/message') do |faraday|
           faraday.response :json, :content_type => /\bjson$/
           faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
         end
