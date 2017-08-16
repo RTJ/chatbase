@@ -50,6 +50,37 @@ response = Chatbase::Message.new.send_message(req_params)
 {"message_id": "1048441442", "status": 200}
 ```
 
+### Send generic multiple messages at once API
+
+```ruby
+chat_params = {
+    messages:[
+        {
+            platform: "ruby",
+            message: "Hello Chatbase message1!",
+            version: "1.0",
+            type: "agent",
+            user_id: "agent-01",
+            time_stamp: DateTime.now.strftime('%Q'),
+        },
+        {
+            platform: "ruby",
+            message: "Hello Chatbase message2!",
+            version: "1.0",
+            type: "agent",
+            user_id: "agent-01",
+            time_stamp: DateTime.now.strftime('%Q'),
+        }
+    ]
+}
+
+response = Chatbase::Message.new.send_messages(chat_params) # messages not message
+
+=> response.body
+
+{"all_succeeded"=>true, "responses"=>[{"message_id"=>1048692001, "status"=>"success"}, {"message_id"=>1048692002, "status"=>"success"}], "status"=>200} 
+```
+
 ### Facebook Message API
 ```ruby
     fb_params = {
