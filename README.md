@@ -23,9 +23,15 @@ bundle install chatbase
 
 Initialize the the gem by setting your Agent Key (agent_key).
 
-eg: config/initializers/chatbase.rb
-
+Ruby on Rails:
+```ruby
+  #config/initializers/chatbase.rb
+  Chatbase.agent_key = 'your-agent-api-key'
 ```
+
+Ruby:
+```ruby
+  require 'chatbase'
   Chatbase.agent_key = 'your-agent-api-key'
 ```
 

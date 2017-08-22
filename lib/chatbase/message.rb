@@ -23,7 +23,7 @@ module Chatbase
     end
 
     def update_message(request_parameters)
-      http_service.request_post("api/message/update", request_parameters)
+      http_service.request_post("/api/message/update", request_parameters)
     end
 
     def send_fbmessage(request_parameters)
