@@ -4,7 +4,7 @@ Chatbase.com analytics API client written in ruby.
 
 ## Installation
 
-Global:
+Global RubyGems:
 ```ruby
 gem install chatbase
 ```
